@@ -121,7 +121,7 @@ export default function App() {
         <div className="bg-gray-800 p-6 rounded-xl border border-gray-700 shadow-lg col-span-1 md:col-span-2 lg:col-span-4">
           <div className="flex justify-between items-center">
             <div>
-              <p className="text-sm font-medium text-gray-400 uppercase tracking-wider">Instancia Base de Datos</p>
+              <p className="text-sm font-medium text-gray-400 uppercase tracking-wider">Instancia Base de Datos SQL</p>
               <h3 className="text-xl font-bold text-emerald-400 mt-1">aws-rds-sql-server-prod</h3>
             </div>
             <div className="text-right">
