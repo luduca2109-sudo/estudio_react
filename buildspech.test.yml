@@ -1,0 +1,13 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 20
+    commands:
+      - echo "Instalando dependencias para entorno de pruebas..."
+      - npm install
+  build:
+    commands:
+      - echo "Ejecutando la suite de pruebas automatizadas..."
+      - npm run test
