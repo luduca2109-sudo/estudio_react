@@ -1,0 +1,17 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 20
+    commands:
+      - echo Instala dependencias del proyecto...
+      - npm install
+  build:
+    commands:
+      - echo Compilando el proyecto TypeScript con Vite...
+      - npm run build
+artifacts:
+  base-directory: dist
+  files:
+    - '**/*'
