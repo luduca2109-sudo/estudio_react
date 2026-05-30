@@ -128,7 +128,7 @@ export default function App() {
               <span className="text-xs bg-gray-700 text-gray-300 px-3 py-1 rounded-md border border-gray-600">
                 Latencia: 4ms
               </span>
-              <p className="text-xs text-gray-500 mt-2">Pool: 85/100 conexiones activas</p>
+              <p className="text-xs text-gray-500 mt-2">Pool: 55/100 conexiones activas</p>
             </div>
           </div>
         </div>
