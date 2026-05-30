@@ -48,8 +48,8 @@ export default function App() {
       {/* Encabezado del Dashboard */}
       <header className="mb-8 border-b border-gray-800 pb-4 flex justify-between items-center">
         <div>
-          <h1 className="text-3xl font-bold tracking-tight">Cloud-Net Telemetry</h1>
-          <p className="text-sm text-gray-400 mt-1">Monitoreo en tiempo real de servicios AWS</p>
+          <h1 className="text-3xl font-bold tracking-tight">Telemetria de estado de computador (Juan camilo)</h1>
+          <p className="text-sm text-gray-400 mt-1">Monitoreo en tiempo real</p>
         </div>
         <div className="flex items-center gap-2 bg-gray-800 px-4 py-2 rounded-lg border border-gray-700">
           <span className="relative flex h-3 w-3">
@@ -115,6 +115,22 @@ export default function App() {
             </span>
           </div>
           <p className="text-xs text-gray-500 mt-7">Región: us-east-1 (N. Virginia)</p>
+        </div>
+
+        {/* Tarjeta 5: Estado SQL Server (Nueva) */}
+        <div className="bg-gray-800 p-6 rounded-xl border border-gray-700 shadow-lg col-span-1 md:col-span-2 lg:col-span-4">
+          <div className="flex justify-between items-center">
+            <div>
+              <p className="text-sm font-medium text-gray-400 uppercase tracking-wider">Instancia Base de Datos</p>
+              <h3 className="text-xl font-bold text-emerald-400 mt-1">aws-rds-sql-server-prod</h3>
+            </div>
+            <div className="text-right">
+              <span className="text-xs bg-gray-700 text-gray-300 px-3 py-1 rounded-md border border-gray-600">
+                Latencia: 4ms
+              </span>
+              <p className="text-xs text-gray-500 mt-2">Pool: 85/100 conexiones activas</p>
+            </div>
+          </div>
         </div>
 
       </div>
