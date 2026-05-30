@@ -117,7 +117,7 @@ export default function App() {
           <p className="text-xs text-gray-500 mt-7">Región: us-east-1 (N. Virginia)</p>
         </div>
 
-        {/* Tarjeta 5: Estado SQL Server (Nueva) */}
+        {/* Tarjeta 5: Estado SQL Server (Nueva) 
         <div className="bg-gray-800 p-6 rounded-xl border border-gray-700 shadow-lg col-span-1 md:col-span-2 lg:col-span-4">
           <div className="flex justify-between items-center">
             <div>
@@ -131,7 +131,7 @@ export default function App() {
               <p className="text-xs text-gray-500 mt-2">Pool: 55/100 conexiones activas</p>
             </div>
           </div>
-        </div>
+        </div>*/}
 
       </div>
 
