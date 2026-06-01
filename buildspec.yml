@@ -1,21 +1,40 @@
+#version: 0.2
+#
+#phases:
+#  install:
+#    runtime-versions:
+#      nodejs: 20
+#    commands:
+#      - echo Instala dependencias del proyecto...
+#      - npm install
+#  pre_build:
+#    commands:
+#      - echo Ejecutando pruebas automatizadas...
+#      - npm run test
+#  build:
+#    commands:
+#      - echo Compilando el proyecto TypeScript con Vite...
+#      - npm run build
+#artifacts:
+#  base-directory: dist
+#  files:
+#    - '**/*'
+
 version: 0.2
 
 phases:
-  install:
-    runtime-versions:
-      nodejs: 20
-    commands:
-      - echo Instala dependencias del proyecto...
-      - npm install
   pre_build:
     commands:
-      - echo Ejecutando pruebas automatizadas...
-      - npm run test
+      - echo "Conectando con el registro de contenedores de AWS..."
+      - aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 469039262667.dkr.ecr.us-east-1.amazonaws.com
+      - REPO_URI=469039262667.dkr.ecr.us-east-1.amazonaws.com/app-react-repo
+      - IMAGE_TAG=latest
   build:
     commands:
-      - echo Compilando el proyecto TypeScript con Vite...
-      - npm run build
-artifacts:
-  base-directory: dist
-  files:
-    - '**/*'
+      - echo "Construyendo la imagen Docker usando el Dockerfile..."
+      - docker build -t $REPO_URI:$IMAGE_TAG .
+  post_build:
+    commands:
+      - echo "Subiendo el contenedor empaquetado a AWS ECR..."
+      - docker push $REPO_URI:$IMAGE_TAG
+      - echo "Despliegue de imagen completado con éxito."
